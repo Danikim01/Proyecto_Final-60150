@@ -3,7 +3,7 @@ alert("Hello, how old are you???")
 let suma_edades = 0;
 let promedio = 0;
 let cantidad_iteraciones = 5;
-for(let i = 0; i < 5;i++){
+for(let i = 0; i < cantidad_iteraciones;i++){
     age = parseInt(prompt("Enter your age:"));
     while (isNaN(age) || age < 0){
         alert("Invalid age, please try again");
