@@ -1,27 +1,81 @@
-alert("Hello, how old are you???")
 
-let suma_edades = 0;
-let promedio = 0;
-let cantidad_iteraciones = 5;
-for(let i = 0; i < cantidad_iteraciones;i++){
-    age = parseInt(prompt("Enter your age:"));
-    while (isNaN(age) || age < 0){
-        alert("Invalid age, please try again");
-        age = parseInt(prompt("Enter your age:"));
+contact_list = []
+
+
+function add_contact(){
+    contact_name = prompt("Name of the contact: ");
+    while (!isNaN(contact_name) || contact_name == ""){
+        contact_name = prompt("Name of the contact: ");
     }
-    suma_edades += age;
+    contact_age = parseInt(prompt("Age of the contact: "));
+    while (isNaN(contact_age) || contact_age < 0 || contact_age > 120){
+        contact_age = parseInt(prompt("Age of the contact: "));
+    }
+    contact = {
+        name: contact_name,
+        age: contact_age,
+    };
+    contact_list.push(contact)
+
+    let p = document.createElement("p");
+    p.innerHTML = contact.name + ": " + contact.age;
+    let container = document.querySelector("div#contacts_lists");
+    container.appendChild(p);
 }
 
-
-promedio = suma_edades / cantidad_iteraciones;
-
-
-if(promedio >= 18){
-    alert("Most of the people are adults");
-}else if(promedio < 18){
-    alert("Most of the people are children");
-}else{
-    alert("Most of the people are teenagers");
+function find_contact_name(contact_to_find){
+    let found = false;
+    contact_list.forEach(element => {
+        if (element.name == contact_to_find){
+            alert("Contact found: " + element.name + ": " + element.age);
+            found = true;
+        }
+    });
+    if(!found){
+        alert("Contact not found");
+    }
+    return found
 }
+
+function find_contact(){
+    contact_to_find = prompt("Name of the contact to find: ");
+    find_contact_name(contact_to_find);
+}
+
+function delete_contact(){
+    if (contact_list.length == 0){
+        alert("No contacts to delete");
+        return
+    }
+    contact_to_delete = prompt("Name of the contact to delete: ");
+    if (!find_contact_name(contact_to_delete)){
+        return;
+    }
+    let c_array = document.querySelector("div#contacts_lists").childNodes;
+    c_array.forEach(node => {
+        if (node.nodeType === 1 && node.innerHTML.includes(contact_to_delete)) {
+            node.remove();
+        }
+    });
+    let index_of_contact = contact_list.indexOf(contact_to_delete);
+    contact_list.splice(index_of_contact,1);
+}
+
+function setEvents(){
+    document.querySelector("button#add").addEventListener("click", add_contact);
+    document.querySelector("button#search").addEventListener("click",find_contact);
+    document.querySelector("button#delete").addEventListener("click",delete_contact);
+}
+
+let elements_container = document.createElement("div");
+elements_container.setAttribute("id","contacts_lists");
+
+let container_div = document.querySelector("body #container_div");
+container_div.appendChild(elements_container);
+
+setEvents();
+
+
+
 
 
