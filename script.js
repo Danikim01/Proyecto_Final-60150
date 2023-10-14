@@ -51,13 +51,18 @@ function delete_contact(){
     if (!find_contact_name(contact_to_delete)){
         return;
     }
-    let c_array = document.querySelector("div#contacts_lists").childNodes;
-    c_array.forEach(node => {
-        if (node.nodeType === 1 && node.innerHTML.includes(contact_to_delete)) {
-            node.remove();
+    let container = document.querySelectorAll("p");
+    container.forEach(element => {
+        if (element.innerHTML.includes(contact_to_delete)){
+            element.remove();
         }
     });
-    let index_of_contact = contact_list.indexOf(contact_to_delete);
+    let index_of_contact = 0;
+    contact_list.forEach(element => {
+        if (element.name == contact_to_delete){
+            index_of_contact = contact_list.indexOf(element);
+        }
+    });
     contact_list.splice(index_of_contact,1);
 }
 
