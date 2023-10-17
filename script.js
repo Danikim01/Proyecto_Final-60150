@@ -57,13 +57,12 @@ function delete_contact(){
             element.remove();
         }
     });
-    let index_of_contact = 0;
-    contact_list.forEach(element => {
-        if (element.name == contact_to_delete){
-            index_of_contact = contact_list.indexOf(element);
+
+    for (let i = contact_list.length - 1; i >= 0; i--) {
+        if (contact_list[i].name === contact_to_delete) {
+            contact_list.splice(i, 1);
         }
-    });
-    contact_list.splice(index_of_contact,1);
+    }
 }
 
 function setEvents(){
