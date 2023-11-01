@@ -1,84 +1,58 @@
+let carrito_hashmap = {}
 
-contact_list = []
+let buttons = document.querySelectorAll("button.add_product_btn")
+
+buttons.forEach(button => {
+    const name = button.getAttribute('data-product')
+    carrito_hashmap[name] = 0
+})
 
 
-function add_contact(){
-    contact_name = prompt("Name of the contact: ");
-    while (!isNaN(contact_name) || contact_name == ""){
-        contact_name = prompt("Name of the contact: ");
+function updateCartDisplay() {
+    const cartList = document.getElementById('cart-list');
+    cartList.innerHTML = '';
+    for (const productName in carrito_hashmap) {
+      const listItem = document.createElement('li');
+      listItem.textContent = `${productName}: ${carrito_hashmap[productName]}`;
+      if (carrito_hashmap[productName] != 0){
+        cartList.appendChild(listItem);
+      }
     }
-    contact_age = parseInt(prompt("Age of the contact: "));
-    while (isNaN(contact_age) || contact_age < 0 || contact_age > 120){
-        contact_age = parseInt(prompt("Age of the contact: "));
-    }
-    contact = {
-        name: contact_name,
-        age: contact_age,
-    };
-    contact_list.push(contact)
+  }
 
-    let p = document.createElement("p");
-    p.innerHTML = contact.name + ": " + contact.age;
-    let container = document.querySelector("div#contacts_lists");
-    container.appendChild(p);
+function showCartPopup() {
+    const cartPopup = document.getElementById('cart-popup');
+    cartPopup.style.display = 'block';
 }
 
-function find_contact_name(contact_to_find){
-    let found = false;
-    contact_list.forEach(element => {
-        if (element.name == contact_to_find){
-            alert("Contact found: " + element.name + ": " + element.age);
-            found = true;
-        }
-    });
-    if(!found){
-        alert("Contact not found");
-    }
-    return found
+function closeCartPopup() {
+    const cartPopup = document.getElementById('cart-popup');
+    cartPopup.style.display = 'none';
 }
 
-function find_contact(){
-    contact_to_find = prompt("Name of the contact to find: ");
-    find_contact_name(contact_to_find);
-}
+// let display = document.querySelector("#display_products")
+// /*display elements as ul li*/
+// let unordered_list = document.createElement("ul")
+// display.appendChild(unordered_list) 
 
-function delete_contact(){
-    if (contact_list.length == 0){
-        alert("No contacts to delete");
-        return
-    }
-    contact_to_delete = prompt("Name of the contact to delete: ");
-    if (!find_contact_name(contact_to_delete)){
-        return;
-    }
-    let container = document.querySelectorAll("p");
-    container.forEach(element => {
-        if (element.innerHTML.includes(contact_to_delete)){
-            element.remove();
-        }
-    });
 
-    for (let i = contact_list.length - 1; i >= 0; i--) {
-        if (contact_list[i].name === contact_to_delete) {
-            contact_list.splice(i, 1);
-        }
-    }
-}
+buttons.forEach(button => {
+    button.addEventListener("click", ()=>{
+        const productName = button.getAttribute('data-product')
+        /*set key:value where key is the product name and value is the amount of clicks*/
+        carrito_hashmap[productName] += 1 
+        updateCartDisplay() 
+        /*display the product and its amount in carrito.html*/
+        // let list_item = document.createElement("li")
+        // list_item.innerHTML = productName + ": " + carrito_hashmap[productName]
+        // unordered_list.appendChild(list_item)
 
-function setEvents(){
-    document.querySelector("button#add").addEventListener("click", add_contact);
-    document.querySelector("button#search").addEventListener("click",find_contact);
-    document.querySelector("button#delete").addEventListener("click",delete_contact);
-}
+    })
+})
 
-let elements_container = document.createElement("div");
-elements_container.setAttribute("id","contacts_lists");
 
-let container_div = document.querySelector("body #container_div");
-container_div.appendChild(elements_container);
-
-setEvents();
-
+document.getElementById("carrito_icon").addEventListener("click",showCartPopup)
+document.getElementById("close-cart-popup").addEventListener("click",closeCartPopup)
 
 
 
