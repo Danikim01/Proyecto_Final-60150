@@ -80,4 +80,67 @@ main section img {
   width: 100%;
 }
 
+/*------------------------CARRITO.HTML----------------------------------*/
+#carrito-container {
+  display: flex;
+  flex-direction: column;
+}
+#carrito-container .carrito-producto {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 600px;
+  gap: 20px;
+  text-align: center;
+}
+#carrito-container .carrito-producto img {
+  height: 150px;
+  aspect-ratio: 1.5;
+}
+#carrito-container .carrito-producto strong {
+  width: 100%;
+}
+#carrito-container .carrito-producto div {
+  width: 100%;
+}
+#carrito-container .carrito-producto div button {
+  background-color: #ee6130;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+#carrito-container .carrito-producto div button:hover {
+  background-color: black;
+}
+
+#totales {
+  display: flex;
+  flex-direction: column;
+  margin-top: 50px;
+  gap: 2px;
+}
+#totales #carrito-botones {
+  display: flex;
+  gap: 20px;
+}
+#totales #carrito-botones button {
+  background-color: #ee6130;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+#totales #carrito-botones button:hover {
+  background-color: black;
+}
+
 /*# sourceMappingURL=styles.css.map */

@@ -15,14 +15,21 @@
       <div id="nav-items">
         <a href="">Tienda</a>
         <a href="">About Us</a>
-        <a href="carrito.html" id="cart"><img src="imagenes/shopping-cart-icon-shopping-basket-on-transparent-background-free-png.webp" alt=""><span id="cuenta-carrito">0</span></a>
+        <a href="" id="cart"><img src="imagenes/shopping-cart-icon-shopping-basket-on-transparent-background-free-png.webp" alt=""><span id="cuenta-carrito">0</span></a>
       </div>
     </header> 
     
 
-    <main class="mb-5 container">
-      <section id="product-container">
-
+    <main class="mb-5 container-fluid">
+      <section id="carrito-container">
+      </section>
+      <section id="totales">
+        <p>Total unidades: <span id="unidades">0</span></p>
+        <p>Total precio: $<span id="precio">0</span></p>
+        <div id="carrito-botones">
+            <button>Comprar</button>
+            <button>Reiniciar Carrito</button>
+        </div>
       </section>
     </main>
 
@@ -64,7 +71,6 @@
     </footer>
 
     <script src="bootstrap/bootstrap.min.js"></script>
-    <script src="productos.js"></script>
-    <script src="script.js"></script>
+    <script src="cart.js"></script>
   </body>
 </html>

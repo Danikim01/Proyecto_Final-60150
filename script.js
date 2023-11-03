@@ -53,10 +53,7 @@ function crearProductos(productos){
   })
 }
 
-/*if i refresh the index.html page i want to refresh/reset the localstorage as well*/
-function resetLocalStorage(){
-  localStorage.clear();
-  actualizarCuentaCarrito()
-}
-resetLocalStorage()
+
+
+actualizarCuentaCarrito()
 crearProductos(productos)

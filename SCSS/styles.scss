@@ -84,3 +84,69 @@ main{
 
     }
 }
+
+
+/*------------------------CARRITO.HTML----------------------------------*/
+
+
+#carrito-container{
+    display: flex;
+    flex-direction: column;
+    .carrito-producto{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        width: 600px;
+        gap: 20px;
+        text-align: center;
+        img{
+            height: 150px;
+            aspect-ratio: 1.5;
+        }
+        strong{
+            width: 100%;
+        }
+        div{
+            width: 100%;
+            button{
+                background-color: $color-acento;
+                border: none;
+                border-radius: 5px;
+                padding: 10px 20px;
+                color: white;
+                font-weight: bold;
+                cursor: pointer;
+                transition: all 0.3s ease;
+                &:hover{
+                    background-color: $color-texto;
+                }
+            }
+        }
+    }
+}
+
+#totales{
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+    gap: 2px;
+    #carrito-botones{
+        display: flex;
+        gap: 20px;
+        button{
+            background-color: $color-acento;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            &:hover{
+                background-color: $color-texto;
+            }
+        }
+    }
+}
