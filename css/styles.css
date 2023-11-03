@@ -3,77 +3,81 @@
   padding: 0;
 }
 
-#carrito_icon {
-  background: none;
-  border: none;
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
 }
-#carrito_icon i {
-  font-size: 50px;
-  color: #F6F4EB;
+header #logo {
+  height: 50px;
+}
+header img {
+  height: 25px;
+}
+header #nav-items {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  position: relative;
+  margin-right: 40px;
+}
+header #nav-items a {
+  text-decoration: none;
+  color: black;
+}
+header #nav-items a:hover:not(#cart) {
+  color: #ee6130;
+}
+header #nav-items #cuenta-carrito {
+  position: absolute;
+  right: -10px;
+  top: 5px;
+  background-color: #ee6130;
+  border-radius: 100%;
+  display: inline-block;
+  width: 20px;
+  line-height: 20px;
+  aspect-ratio: 1;
+  text-align: center;
 }
 
-#entrada {
-  background-color: #F2EAD3;
-  height: 50vh;
+main {
+  margin-top: 50px;
+}
+main section {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  gap: 30px;
 }
-
-.product_card {
-  background-color: #91C8E4;
+main section .tarjeta-producto {
   border-radius: 10px;
-  padding: 10px;
-  margin: 20px;
-  box-shadow: 0px 0px 10px 0px #4682A9;
-}
-.product_card img {
-  width: 100%;
-  height: 100%;
-}
-.product_card .add_product_btn {
-  background-color: #749BC2;
-  height: 55px;
-  border: none;
-  border-radius: 15px;
-  padding: 10px;
-  transition: all 0.5s ease-in-out;
-  font-size: 1.2rem;
-}
-.product_card .add_product_btn:hover {
-  background-color: #4682A9;
-  color: F6F4EB;
-}
-
-/* Estilos para la ventana emergente */
-.popup {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  backdrop-filter: blur(5px);
-  z-index: 1;
-}
-
-.popup-content {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: #fff;
   padding: 20px;
-  border: 1px solid #000;
+  max-width: 400px;
+  text-align: center;
+  background-color: lightgrey;
+  transition: all 0.3s ease-in-out;
 }
-
-.close-button {
-  position: absolute;
-  top: 1px;
-  right: 10px;
-  font-size: 20px;
+main section .tarjeta-producto:hover {
+  transform: translate(0, -20px);
+}
+main section .tarjeta-producto button {
+  background-color: #ee6130;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  color: white;
+  font-weight: bold;
   cursor: pointer;
+  transition: all 0.3s ease;
+}
+main section .tarjeta-producto button:hover {
+  background-color: black;
+}
+main section img {
+  width: 100%;
 }
 
 /*# sourceMappingURL=styles.css.map */

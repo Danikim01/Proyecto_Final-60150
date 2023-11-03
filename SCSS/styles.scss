@@ -3,78 +3,84 @@
     padding: 0;
 }
 
+$color-acento: #ee6130;
+$color-acento-claro: #ee613033;
+$color-texto: black;
 
-
-#carrito_icon{
-    background:none;
-    border: none;
-    i{
-        font-size: 50px;
-        color: #F6F4EB;
-    }
-}
-
-#entrada{
-    background-color: #F2EAD3;
-    height: 50vh;
+header{
     display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.product_card{
-    img{
-        width: 100%;
-        height: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    box-shadow: 0 3px 5px rgba(0,0,0,0.2);
+    #logo{
+        height: 50px;
     }
-    .add_product_btn{
-        background-color: #749BC2;
-        height: 55px;
-        border: none;
-        border-radius: 15px;
-        padding: 10px;
-        transition: all 0.5s ease-in-out;
-        font-size: 1.2rem;
-        &:hover{
-            background-color: #4682A9;
-            color: F6F4EB;
+    img{
+        height: 25px;
+    }
+    #nav-items{
+        display: flex;
+        align-items: center;
+        gap: 30px;
+        position: relative;
+        margin-right: 40px;
+        a{
+            text-decoration: none;
+            color: $color-texto;
+            &:hover:not(#cart){
+                color: $color-acento;
+            }
+        }
+        #cuenta-carrito{
+            position: absolute;
+            right: -10px;
+            top: 5px;
+            background-color: $color-acento;
+            border-radius: 100%;
+            display: inline-block;
+            width: 20px;
+            line-height: 20px;
+            aspect-ratio: 1;
+            text-align: center;
         }
     }
-    background-color: #91C8E4;
-    border-radius: 10px;
-    padding: 10px;
-    margin: 20px;
-    box-shadow: 0px 0px 10px 0px #4682A9;
 }
 
+main{
+    margin-top: 50px;
+    section{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+        .tarjeta-producto{
+            border-radius: 10px;
+            padding: 20px;
+            max-width: 400px;
+            text-align: center;
+            background-color: lightgrey;
+            transition: all 0.3s ease-in-out;
+            &:hover{
+                transform: translate(0, -20px);
+            }
+            button{
+                background-color: $color-acento;
+                border: none;
+                border-radius: 5px;
+                padding: 10px 20px;
+                color: white;
+                font-weight: bold;
+                cursor: pointer;
+                transition: all 0.3s ease;
+                &:hover{
+                    background-color: $color-texto;
+                }
+            }
+        }
+        img{
+            width: 100%;
+        }
 
-/* Estilos para la ventana emergente */
-.popup {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    backdrop-filter: blur(5px);
-    z-index: 1;
-  }
-  
-  .popup-content {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: #fff;
-    padding: 20px;
-    border: 1px solid #000;
-  }
-  
-  .close-button {
-    position: absolute;
-    top: 1px;
-    right: 10px;
-    font-size: 20px;
-    cursor: pointer;
-  }
+    }
+}

@@ -4,181 +4,26 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Simulador Interactivo</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="bootstrap/bootstrap.min.css" />
     <link rel="stylesheet" href="css/styles.css" />
   </head>
   <body>
-    <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
-      <symbol
-        id="aperture"
-        fill="none"
-        stroke="currentColor"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        stroke-width="2"
-        viewBox="0 0 24 24"
-      >
-        <circle cx="12" cy="12" r="10"></circle>
-        <path
-          d="M14.31 8l5.74 9.94M9.69 8h11.48M7.38 12l5.74-9.94M9.69 16L3.95 6.06M14.31 16H2.83m13.79-4l-5.74 9.94"
-        ></path>
-      </symbol>
-      <symbol id="cart" viewBox="0 0 16 16">
-        <path
-          d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l.84 4.479 9.144-.459L13.89 4H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"
-        ></path>
-      </symbol>
-      <symbol id="chevron-right" viewBox="0 0 16 16">
-        <path
-          fill-rule="evenodd"
-          d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"
-        ></path>
-      </symbol>
-    </svg>
+    
 
-    <nav
-      class="navbar navbar-expand-md bg-dark sticky-top border-bottom"
-      data-bs-theme="dark"
-    >
-      <div class="container">
-        <a class="navbar-brand d-md-none" href="index.html">
-          <svg class="bi" width="24" height="24">
-            <use xlink:href="#aperture"></use>
-          </svg>
-          Aperture
-        </a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="offcanvas"
-          data-bs-target="#offcanvas"
-          aria-controls="#offcanvas"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div
-          class="offcanvas offcanvas-end"
-          tabindex="-1"
-          id="#offcanvas"
-          aria-labelledby="#offcanvasLabel"
-        >
-          <div class="offcanvas-header">
-            <h5 class="offcanvas-title" id="#offcanvasLabel">Aperture</h5>
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="offcanvas"
-              aria-label="Close"
-            ></button>
-          </div>
-          <div class="offcanvas-body">
-            <ul class="navbar-nav flex-grow-1 justify-content-around">
-              <li class="nav-item">
-                <a class="nav-link" href="#">
-                  <svg class="bi" width="50" height="50">
-                    <use xlink:href="#aperture"></use>
-                  </svg>
-                </a>
-              </li>
-              <li class="nav-item">
-                <button id="carrito_icon">
-                    <i class="fa">&#xf07a;</i>
-                </button>
-              </li>
-            </ul>
-          </div>
-        </div>
+    <header>
+      <a href="index.html"><img src="imagenes/abstract-isometric-logo-design-free-logo.jpg" alt="Logo" id="logo"></a>
+      <div id="nav-items">
+        <a href="">Tienda</a>
+        <a href="">About Us</a>
+        <a href="" id="cart"><img src="imagenes/shopping-cart-icon-shopping-basket-on-transparent-background-free-png.webp" alt=""><span id="cuenta-carrito">0</span></a>
       </div>
-    </nav>
+    </header> 
+    
 
-    <!-- Estructura de la ventana emergente -->
-    <div id="cart-popup" class="popup">
-      <div class="popup-content">
-        <span class="close-button" id="close-cart-popup">&times;</span>
-        <h2>Carrito de Compras</h2>
-        <ul id="cart-list">
-          <!-- Aquí se mostrarán los productos en el carrito -->
-        </ul>
-      </div>
-    </div>
+    <main class="mb-5 container">
+      <section id="product-container">
 
-    <main class="mb-5">
-      <div id="entrada">
-        <h1>Bienvenidos a la Tienda!</h1>
-      </div>
-      <div class="container mt-5">
-        <div class="row justify-content-center">
-          <div class="col-md-3 text-center product_card">
-            <div><img src="imagenes/placeholder-image.png" alt="" /></div>
-            <p>Product 1</p>
-            <button class="add_product_btn" data-product="Product 1">
-              Add Product
-            </button>
-          </div>
-          <div class="col-md-3 text-center product_card">
-            <div><img src="imagenes/placeholder-image.png" alt="" /></div>
-            <p>Product 2</p>
-            <button class="add_product_btn" data-product="Product 2">
-              Add Product
-            </button>
-          </div>
-          <div class="col-md-3 text-center product_card">
-            <div><img src="imagenes/placeholder-image.png" alt="" /></div>
-            <p>Product 3</p>
-            <button class="add_product_btn" data-product="Product 3">
-              Add Product
-            </button>
-          </div>
-        </div>
-        <div class="row justify-content-center">
-          <div class="col-md-3 text-center product_card">
-            <div><img src="imagenes/placeholder-image.png" alt="" /></div>
-            <p>Product 4</p>
-            <button class="add_product_btn" data-product="Product 4">
-              Add Product
-            </button>
-          </div>
-          <div class="col-md-3 text-center product_card">
-            <div><img src="imagenes/placeholder-image.png" alt="" /></div>
-            <p>Product 5</p>
-            <button class="add_product_btn" data-product="Product 5">
-              Add Product
-            </button>
-          </div>
-          <div class="col-md-3 text-center product_card">
-            <div><img src="imagenes/placeholder-image.png" alt="" /></div>
-            <p>Product 6</p>
-            <button class="add_product_btn" data-product="Product 6">
-              Add Product
-            </button>
-          </div>
-        </div>
-        <div class="row justify-content-center">
-          <div class="col-md-3 text-center product_card">
-            <div><img src="imagenes/placeholder-image.png" alt="" /></div>
-            <p>Product 7</p>
-            <button class="add_product_btn" data-product="Product 7">
-              Add Product
-            </button>
-          </div>
-          <div class="col-md-3 text-center product_card">
-            <div><img src="imagenes/placeholder-image.png" alt="" /></div>
-            <p>Product 8</p>
-            <button class="add_product_btn" data-product="Product 8">
-              Add Product
-            </button>
-          </div>
-          <div class="col-md-3 text-center product_card">
-            <div><img src="imagenes/placeholder-image.png" alt="" /></div>
-            <p>Product 9</p>
-            <button class="add_product_btn" data-product="Product 9">
-              Add Product
-            </button>
-          </div>
-        </div>
-      </div>
+      </section>
     </main>
 
     <footer>
@@ -219,6 +64,7 @@
     </footer>
 
     <script src="bootstrap/bootstrap.min.js"></script>
+    <script src="productos.js"></script>
     <script src="script.js"></script>
   </body>
 </html>
