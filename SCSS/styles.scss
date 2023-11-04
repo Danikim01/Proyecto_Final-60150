@@ -48,6 +48,7 @@ header{
 
 main{
     margin-top: 50px;
+    margin-bottom: 50px;
     section{
         display: flex;
         flex-wrap: wrap;
@@ -149,4 +150,23 @@ main{
             }
         }
     }
+}
+
+body{
+    height: 100vh;
+}
+
+footer {
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #f8f9fa; /* El color de fondo que desees */
+    border-top: 1px solid #dee2e6; /* Opcional: agregar un borde superior */
+    padding: 10px; /* Espaciado interno opcional */
+  }
+
+main{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
