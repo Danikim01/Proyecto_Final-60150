@@ -65,12 +65,14 @@ function botonEliminarElemento(nuevoProducto,producto){
         if (nuevaMemoria.length === 1){
             localStorage.removeItem("producto")
             actualizarCuentaCarrito()
+            actualizarCuentaCarrito()
             mostrarCarrito()
         }else{
             const indiceProducto = nuevaMemoria.findIndex(p => p.id === producto.id)
             nuevaMemoria.splice(indiceProducto,1)
             localStorage.setItem("producto", JSON.stringify(nuevaMemoria))
             actualizarUnidadesCarrito()
+            actualizarCuentaCarrito()
             actualizarPrecioTotal()
         }
     })
