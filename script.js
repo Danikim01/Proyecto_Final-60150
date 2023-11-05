@@ -2,13 +2,18 @@ const contenedorProductos = document.getElementById('product-container')
 
 const cuenta_carrito = document.getElementById('cuenta-carrito')
 
+/*
+* Esta funcion actualiza la cantidad de productos que hay en el carrito
+*/ 
 function actualizarCuentaCarrito(){
   const memoria = JSON.parse(localStorage.getItem("producto"))
   const cuenta = memoria ? memoria.reduce((acc, producto) => acc + producto.cantidad, 0) : 0
   cuenta_carrito.innerHTML = cuenta
 }
 
-
+/*
+* Esta funcion agrega el producto recibido por parametro al carrito, lo almacena en el local storage
+*/
 function agregarAlCarrito(producto){
     const memoria = JSON.parse(localStorage.getItem("producto"))
     console.log(memoria)
@@ -35,6 +40,10 @@ function agregarAlCarrito(producto){
     actualizarCuentaCarrito()
 }
 
+/*
+* Esta funcion itera sobre los productos recibidos, crea un div por cada uno y lo agrega al contenedor de productos
+* para luego agregarles la funcionalidad de agregar al carrito
+*/
 function crearProductos(productos){
   productos.forEach(producto => {
     const nuevoProducto = document.createElement('div')

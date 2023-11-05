@@ -92,7 +92,7 @@ main section img {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  width: 600px;
+  width: 1000px;
   gap: 20px;
   text-align: center;
 }
@@ -106,7 +106,8 @@ main section img {
 #carrito-container .carrito-producto div {
   width: 100%;
 }
-#carrito-container .carrito-producto div button {
+
+button {
   background-color: #ee6130;
   border: none;
   border-radius: 5px;
@@ -116,7 +117,7 @@ main section img {
   cursor: pointer;
   transition: all 0.3s ease;
 }
-#carrito-container .carrito-producto div button:hover {
+button:hover {
   background-color: black;
 }
 
