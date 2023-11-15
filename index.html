@@ -13,20 +13,30 @@
       <a href="index.html"><img src="imagenes/abstract-isometric-logo-design-free-logo.jpg" alt="Logo" id="logo"></a>
       <div id="nav-items">
         <a href="index.html">Tienda</a>
+        <div class="dropdown">
+          <a href="#" class="dropbtn">Categorías</a>
+          <div class="dropdown-content">
+            <a id="electronics" href="#">Electronics</a>
+            <a id="jewelery" href="#">Jewelery</a>
+            <a id="men's clothing" href="#">Men's clothing</a>
+            <a id="women's clothing" href="#">Women's clothing</a>
+          </div>
+        </div>
         <a href="index.html">About Us</a>
         <a href="carrito.html" id="cart"><img src="imagenes/shopping-cart-icon-shopping-basket-on-transparent-background-free-png.webp" alt=""><span id="cuenta-carrito">0</span></a>
       </div>
-    </header> 
+    </header>
+    
     
 
-    <main class="container mb-5">
+    <main class="container-fluid">
+      <h1 class="text-center mb-5" id="title"></h1>
       <section id="product-container">
 
       </section>
     </main>
 
     <script src="bootstrap/bootstrap.min.js"></script>
-    <script src="productos.js"></script>
     <script src="script.js"></script>
   </body>
 </html>

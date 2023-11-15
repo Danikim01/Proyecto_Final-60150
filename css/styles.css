@@ -8,9 +8,10 @@ header {
   flex-direction: row;
   justify-content: space-between;
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+  height: 66px;
 }
 header #logo {
-  height: 50px;
+  height: 100%;
 }
 header img {
   height: 25px;
@@ -25,6 +26,7 @@ header #nav-items {
 header #nav-items a {
   text-decoration: none;
   color: black;
+  font-size: 1.2rem;
 }
 header #nav-items a:hover:not(#cart) {
   color: #ee6130;
@@ -41,10 +43,44 @@ header #nav-items #cuenta-carrito {
   aspect-ratio: 1;
   text-align: center;
 }
+header #nav-items .dropdown {
+  position: relative;
+  display: inline-block;
+}
+header #nav-items .dropdown .dropbtn {
+  padding: 14px 16px;
+  border: none;
+  background-color: inherit;
+  cursor: pointer;
+}
+header #nav-items .dropdown .dropbtn a {
+  font-size: 1.2rem;
+}
+header #nav-items .dropdown .dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+header #nav-items .dropdown .dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  display: block;
+  text-decoration: none;
+  text-align: center;
+}
+header #nav-items .dropdown .dropdown-content a:hover {
+  background-color: #f1f1f1;
+}
+header #nav-items .dropdown:hover .dropdown-content {
+  display: block;
+}
 
 main {
+  max-width: 144rem;
+  padding: 0 2rem;
   margin-top: 50px;
-  margin-bottom: 50px;
 }
 main section {
   display: flex;
@@ -56,10 +92,16 @@ main section {
 main section .tarjeta-producto {
   border-radius: 10px;
   padding: 20px;
-  max-width: 400px;
+  max-width: 500px;
   text-align: center;
   background-color: lightgrey;
   transition: all 0.3s ease-in-out;
+}
+main section .tarjeta-producto h3 {
+  font-size: 1rem;
+  max-width: 300px;
+  min-height: 50px;
+  margin-top: 0.5rem;
 }
 main section .tarjeta-producto:hover {
   transform: translate(0, -20px);
@@ -77,8 +119,10 @@ main section .tarjeta-producto button {
 main section .tarjeta-producto button:hover {
   background-color: black;
 }
-main section img {
-  width: 100%;
+main section .tarjeta-producto img {
+  padding: 10px;
+  width: 300px;
+  height: 300px;
 }
 
 /*------------------------CARRITO.HTML----------------------------------*/

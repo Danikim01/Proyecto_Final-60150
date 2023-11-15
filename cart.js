@@ -12,7 +12,7 @@ function actualizarUnidadesCarrito(){
  */
 function actualizarPrecioTotal(){
     const productos = JSON.parse(localStorage.getItem("producto"))
-    const precio_total = productos.reduce((acc, producto) => acc + producto.precio * producto.cantidad, 0)
+    const precio_total = productos.reduce((acc, producto) => acc + producto.price * producto.cantidad, 0)
     document.querySelector("#precio").innerHTML = precio_total
 }
 
@@ -92,9 +92,9 @@ function mostrarCarrito(){
             const nuevoProducto = document.createElement('div')
             nuevoProducto.classList = "carrito-producto"
             nuevoProducto.innerHTML = `
-            <img src="${producto.img}" alt="${producto.nombre}">
-            <strong>${producto.nombre}</strong>
-            <p>$${producto.precio}</p>
+            <img src="${producto.image}" alt="${producto.title}">
+            <strong>${producto.title}</strong>
+            <p>$${producto.price}</p>
             <div>
                 <button id="btn-restar">-</button>
                 <span id=cantidad>${producto.cantidad}</span>

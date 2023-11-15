@@ -7,84 +7,145 @@ $color-acento: #ee6130;
 $color-acento-claro: #ee613033;
 $color-texto: black;
 
-header{
+header {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    box-shadow: 0 3px 5px rgba(0,0,0,0.2);
-    #logo{
-        height: 50px;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+    height: 66px;
+    #logo {
+      height: 100%;
     }
-    img{
-        height: 25px;
+  
+    img {
+      height: 25px;
     }
-    #nav-items{
-        display: flex;
-        align-items: center;
-        gap: 30px;
+  
+    #nav-items {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      position: relative;
+      margin-right: 40px;
+  
+      a {
+        text-decoration: none;
+        color: $color-texto;
+        font-size: 1.2rem;
+  
+        &:hover:not(#cart) {
+          color: $color-acento;
+        }
+      }
+  
+      #cuenta-carrito {
+        position: absolute;
+        right: -10px;
+        top: 5px;
+        background-color: $color-acento;
+        border-radius: 100%;
+        display: inline-block;
+        width: 20px;
+        line-height: 20px;
+        aspect-ratio: 1;
+        text-align: center;
+      }
+  
+      .dropdown {
         position: relative;
-        margin-right: 40px;
-        a{
+        display: inline-block;
+  
+        .dropbtn {
+          padding: 14px 16px;
+          border: none;
+          background-color: inherit;
+          cursor: pointer;
+          a{
+            font-size: 1.2rem;
+          }
+        }
+  
+        .dropdown-content {
+          display: none;
+          position: absolute;
+          background-color: #f9f9f9;
+          box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+          z-index: 1;
+  
+          a {
+            color: black;
+            padding: 12px 16px;
+            display: block;
             text-decoration: none;
-            color: $color-texto;
-            &:hover:not(#cart){
-                color: $color-acento;
-            }
-        }
-        #cuenta-carrito{
-            position: absolute;
-            right: -10px;
-            top: 5px;
-            background-color: $color-acento;
-            border-radius: 100%;
-            display: inline-block;
-            width: 20px;
-            line-height: 20px;
-            aspect-ratio: 1;
             text-align: center;
+  
+            &:hover {
+              background-color: #f1f1f1;
+            }
+          }
         }
+  
+        &:hover .dropdown-content {
+          display: block;
+        }
+      }
     }
-}
+  }
+  
 
-main{
+
+main {
+    max-width: 144rem;
+    padding: 0 2rem;
     margin-top: 50px;
-    margin-bottom: 50px;
-    section{
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        align-items: center;
-        gap: 30px;
-        .tarjeta-producto{
-            border-radius: 10px;
-            padding: 20px;
-            max-width: 400px;
-            text-align: center;
-            background-color: lightgrey;
-            transition: all 0.3s ease-in-out;
-            &:hover{
-                transform: translate(0, -20px);
-            }
-            button{
-                background-color: $color-acento;
-                border: none;
-                border-radius: 5px;
-                padding: 10px 20px;
-                color: white;
-                font-weight: bold;
-                cursor: pointer;
-                transition: all 0.3s ease;
-                &:hover{
-                    background-color: $color-texto;
-                }
-            }
+    section {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 30px;
+  
+      .tarjeta-producto {
+        border-radius: 10px;
+        padding: 20px;
+        max-width: 500px; // Puedes ajustar según sea necesario
+        text-align: center;
+        background-color: lightgrey;
+        transition: all 0.3s ease-in-out;
+        h3 {
+            font-size: 1rem; // Ajusta los valores según tus preferencias
+            max-width: 300px;
+            min-height: 50px;
+            margin-top: 0.5rem; // Añade un margen superior opcional para separar el título de la imagen
         }
-        img{
-            width: 100%;
+        &:hover {
+          transform: translate(0, -20px);
         }
-
+  
+        button {
+          background-color: $color-acento;
+          border: none;
+          border-radius: 5px;
+          padding: 10px 20px;
+          color: white;
+          font-weight: bold;
+          cursor: pointer;
+          transition: all 0.3s ease;
+  
+          &:hover {
+            background-color: $color-texto;
+          }
+        }
+  
+        img {
+            padding: 10px;
+            width: 300px;
+            height: 300px;
+        }
+      }
     }
-}
+  }
+  
 
 
 /*------------------------CARRITO.HTML----------------------------------*/
