@@ -3,14 +3,18 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Simulador Interactivo</title>
+    <title>Detalles del Producto</title>
     <link rel="stylesheet" href="bootstrap/bootstrap.min.css" />
     <link rel="stylesheet" href="css/styles.css" />
   </head>
   <body>
-  
     <header>
-      <a href="index.html"><img src="imagenes/abstract-isometric-logo-design-free-logo.jpg" alt="Logo" id="logo"></a>
+      <a href="index.html"
+        ><img
+          src="imagenes/abstract-isometric-logo-design-free-logo.jpg"
+          alt="Logo"
+          id="logo"
+      /></a>
       <div id="nav-items">
         <a href="index.html">Tienda</a>
         <div class="dropdown">
@@ -23,20 +27,28 @@
           </div>
         </div>
         <a href="index.html">About Us</a>
-        <a href="carrito.html" id="cart"><img src="imagenes/shopping-cart-icon-shopping-basket-on-transparent-background-free-png.webp" alt=""><span id="cuenta-carrito">0</span></a>
+        <a href="carrito.html" id="cart"
+          ><img
+            src="imagenes/shopping-cart-icon-shopping-basket-on-transparent-background-free-png.webp"
+            alt=""
+          /><span id="cuenta-carrito">0</span></a
+        >
       </div>
     </header>
-    
-    
 
-    <main class="container-fluid">
-      <h1 class="text-center mb-5" id="title"></h1>
-      <section id="product-container">
-
-      </section>
+    <main class="container-fluid pro-details">
+      <div class="single-pro-image">
+        <img src="" alt="" id="product-image" width="100%" />
+      </div>
+      <div class="single-pro-details">
+        <h1 id="product-title"></h1>
+        <h2 id="product-price"></h2>
+        <h4>Product Details</h4>
+        <p id="product-description"></p>
+      </div>
     </main>
 
     <script src="bootstrap/bootstrap.min.js"></script>
-    <script src="script.js" type="module"></script>
+    <script src="product.js" type="module"></script>
   </body>
 </html>

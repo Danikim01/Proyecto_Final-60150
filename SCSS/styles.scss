@@ -112,6 +112,7 @@ main {
         text-align: center;
         background-color: lightgrey;
         transition: all 0.3s ease-in-out;
+        box-shadow: 0 3px 5px rgba(0, 0, 0, 0.5);
         h3 {
             font-size: 1rem; // Ajusta los valores según tus preferencias
             max-width: 300px;
@@ -120,6 +121,7 @@ main {
         }
         &:hover {
           transform: translate(0, -20px);
+          cursor: pointer;
         }
   
         button {
@@ -146,6 +148,51 @@ main {
     }
   }
   
+
+.pro-details{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  margin-top: 20px;
+  .single-pro-details{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+    padding-top: 30px;
+    h1{
+      max-width: 500px;
+      text-align: center;
+    }
+    h4{
+      padding: 20px 0 20px 0;
+    }
+    h2{
+      font-size: 26px;
+    }
+    p {
+      max-width: 500px;
+    }
+  }
+}
+
+.single-pro-image{
+  margin-top: 30px;
+  width: 40%;
+  height: 80vh;
+  border-radius: 10px;
+  padding: 20px;
+  background-color: lightgrey;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.5);
+  img{
+    height: 100%;
+    width: 100%;
+  }
+  
+}
+
 
 
 /*------------------------CARRITO.HTML----------------------------------*/

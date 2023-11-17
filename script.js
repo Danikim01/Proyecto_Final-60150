@@ -7,7 +7,7 @@ const cuenta_carrito = document.getElementById('cuenta-carrito')
 /*
 * Esta funcion actualiza la cantidad de productos que hay en el carrito
 */ 
-function actualizarCuentaCarrito(){
+export function actualizarCuentaCarrito(){
   const memoria = JSON.parse(localStorage.getItem("producto"))
   const cuenta = memoria ? memoria.reduce((acc, producto) => acc + producto.cantidad, 0) : 0
   cuenta_carrito.innerHTML = cuenta
@@ -16,7 +16,7 @@ function actualizarCuentaCarrito(){
 /*
 * Esta funcion agrega el producto recibido por parametro al carrito, lo almacena en el local storage
 */
-function agregarAlCarrito(producto){
+export function agregarAlCarrito(producto){
     const memoria = JSON.parse(localStorage.getItem("producto"))
     if(!memoria){
       const nuevoProducto = producto
@@ -105,7 +105,10 @@ async function crearProductos() {
       `;
 
       contenedorProductos.appendChild(nuevoProducto);
-
+      nuevoProducto.querySelector("img").addEventListener('click', () => {
+        // Abrir en una nueva pestaña y pasar información del producto a través de la URL
+        window.open(`sproduct.html?id=${producto.id}`, '_blank');
+      });
       nuevoProducto.querySelector('#btn-agregar').addEventListener('click', () => {
         agregarAlCarrito(producto);
       });
