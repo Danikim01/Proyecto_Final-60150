@@ -13,7 +13,7 @@ function actualizarUnidadesCarrito(){
 function actualizarPrecioTotal(){
     const productos = JSON.parse(localStorage.getItem("producto"))
     const precio_total = productos.reduce((acc, producto) => acc + producto.price * producto.cantidad, 0)
-    document.querySelector("#precio").innerHTML = precio_total
+    document.querySelector("#precio").innerHTML = Math.round(precio_total * 100) / 100;
 }
 
 /**
@@ -125,15 +125,43 @@ function mostrarCarrito(){
     }
 }
 
+function removeStorage(){
+    localStorage.removeItem("producto")
+    actualizarCuentaCarrito()
+    mostrarCarrito()
+}
+
 /*
  * Esta funcion setea la funcionalidad del boton reiniciar carrito, lo cual elimina todos los productos del carrito y del local storage 
  */
 function setearReiniciarCarrito(){
     const reiniciar_carrito = document.getElementById('boton-reiniciar')
     reiniciar_carrito.addEventListener('click', () => {
-        localStorage.removeItem("producto")
-        actualizarCuentaCarrito()
-        mostrarCarrito()
+        removeStorage()
+    })
+}
+
+function setearRealizarCompra(){
+    const comprar = document.getElementById('boton-comprar')
+    comprar.addEventListener('click', () => {
+        Swal.fire({
+            title: "Confirmar compra?",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Si, comprar!",
+            cancelButtonText: "Cancelar compra"
+          }).then((result) => {
+            if (result.isConfirmed) {
+                removeStorage()
+                Swal.fire({
+                    text: "Compra realizada con exito, mientras tanto siga comprando!",
+                    title: "Compra exitosa",
+                    icon: "success"
+                });
+            }
+          });
     })
 }
 
@@ -153,3 +181,4 @@ function actualizarCuentaCarrito(){
 actualizarCuentaCarrito()
 mostrarCarrito()
 setearReiniciarCarrito()
+setearRealizarCompra()

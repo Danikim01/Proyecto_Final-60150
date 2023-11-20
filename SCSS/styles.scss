@@ -94,7 +94,7 @@ header {
   
 
 
-main {
+main#tienda {
     max-width: 144rem;
     padding: 0 2rem;
     margin-top: 50px;
@@ -121,9 +121,16 @@ main {
         }
         &:hover {
           transform: translate(0, -20px);
-          cursor: pointer;
         }
-  
+        img{
+          transition: all 0.3s ease-in-out;
+          &:hover{
+            cursor: pointer;
+            opacity: 0.7;
+
+          }
+        }
+
         button {
           background-color: $color-acento;
           border: none;
@@ -154,7 +161,6 @@ main {
   display: flex;
   justify-content: center;
   flex-direction: row;
-  margin-top: 20px;
   .single-pro-details{
     display: flex;
     flex-direction: column;
@@ -173,6 +179,7 @@ main {
     }
     p {
       max-width: 500px;
+      text-align: center;
     }
   }
 }
@@ -180,7 +187,7 @@ main {
 .single-pro-image{
   margin-top: 30px;
   width: 40%;
-  height: 80vh;
+  height: 75vh;
   border-radius: 10px;
   padding: 20px;
   background-color: lightgrey;
@@ -198,16 +205,29 @@ main {
 /*------------------------CARRITO.HTML----------------------------------*/
 
 
+
+main#carrito{
+  max-width: 144rem;
+  padding: 0 2rem;
+  margin-top: 50px;
+  padding-bottom: 30px;
+  section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
 #carrito-container{
     display: flex;
     flex-direction: column;
     .carrito-producto{
-        width: 100%;
+        width: 60%;
         display: flex;
         flex-direction: row;
         justify-content: center;
         align-items: center;
-        width: 1000px;
         gap: 20px;
         text-align: center;
         img{
@@ -240,7 +260,6 @@ button{
 #totales{
     display: flex;
     flex-direction: column;
-    margin-top: 50px;
     gap: 2px;
     #carrito-botones{
         display: flex;
@@ -265,17 +284,3 @@ body{
     height: 100vh;
 }
 
-footer {
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background-color: #f8f9fa; /* El color de fondo que desees */
-    border-top: 1px solid #dee2e6; /* Opcional: agregar un borde superior */
-    padding: 10px; /* Espaciado interno opcional */
-  }
-
-main{
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-}

@@ -1,7 +1,7 @@
+
 const contenedorProductos = document.getElementById('product-container')
 
 const cuenta_carrito = document.getElementById('cuenta-carrito')
-
 
 
 /*
@@ -27,7 +27,7 @@ export function agregarAlCarrito(producto){
       const indiceProducto = memoria.findIndex(p => p.id === producto.id)
       if(indiceProducto === -1){
         const nuevoProducto = producto
-        nuevaMemoria = memoria
+        const nuevaMemoria = memoria
         nuevoProducto.cantidad = 1
         nuevaMemoria.push(nuevoProducto)
         localStorage.setItem("producto", JSON.stringify(nuevaMemoria))
@@ -58,9 +58,24 @@ async function filtrarPorCategoria(categoria){
         <button id="btn-agregar">Agregar al carrito</button>
       `
       contenedorProductos.appendChild(nuevoProducto)
-      nuevoProducto.querySelector('#btn-agregar').addEventListener('click', () => {
-        agregarAlCarrito(producto)
-      })
+      nuevoProducto.addEventListener('click', () => {
+        window.open(`sproduct.html?id=${producto.id}`, '_self');
+      });
+      nuevoProducto.querySelector('#btn-agregar').addEventListener('click', (event) => {
+        event.stopPropagation(); 
+        agregarAlCarrito(producto);
+        Swal.fire({
+          title: "Producto agregado al carrito",
+          imageUrl: './imagenes/shopping-cart-icon-shopping-basket-on-transparent-background-free-png.webp',
+          imageWidth: 200,
+          imageHeight: 100,
+          imageAlt: "Custom image",
+          icon: "success",
+          timer: 1200,
+          timerProgressBar: true,
+          showConfirmButton: false,
+        });
+      });
     })
   }catch (error) {
     console.error('Error:', error);
@@ -105,14 +120,24 @@ async function crearProductos() {
       `;
 
       contenedorProductos.appendChild(nuevoProducto);
-      nuevoProducto.querySelector("img").addEventListener('click', () => {
-        // Abrir en una nueva pestaña y pasar información del producto a través de la URL
-        window.open(`sproduct.html?id=${producto.id}`, '_blank');
+      nuevoProducto.addEventListener('click', () => {
+        window.open(`sproduct.html?id=${producto.id}`, '_self');
       });
-      nuevoProducto.querySelector('#btn-agregar').addEventListener('click', () => {
+      nuevoProducto.querySelector('#btn-agregar').addEventListener('click', (event) => {
+        event.stopPropagation(); 
         agregarAlCarrito(producto);
+        Swal.fire({
+          title: "Producto agregado al carrito",
+          imageUrl: './imagenes/shopping-cart-icon-shopping-basket-on-transparent-background-free-png.webp',
+          imageWidth: 200,
+          imageHeight: 100,
+          imageAlt: "Custom image",
+          icon: "success",
+          timer: 1200,
+          timerProgressBar: true,
+          showConfirmButton: false,
+        });
       });
-
     }
     filtrarPrductosSegunCategoria()
   } catch (error) {

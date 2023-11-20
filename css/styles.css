@@ -77,19 +77,19 @@ header #nav-items .dropdown:hover .dropdown-content {
   display: block;
 }
 
-main {
+main#tienda {
   max-width: 144rem;
   padding: 0 2rem;
   margin-top: 50px;
 }
-main section {
+main#tienda section {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   gap: 30px;
 }
-main section .tarjeta-producto {
+main#tienda section .tarjeta-producto {
   border-radius: 10px;
   padding: 20px;
   max-width: 500px;
@@ -98,17 +98,23 @@ main section .tarjeta-producto {
   transition: all 0.3s ease-in-out;
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.5);
 }
-main section .tarjeta-producto h3 {
+main#tienda section .tarjeta-producto h3 {
   font-size: 1rem;
   max-width: 300px;
   min-height: 50px;
   margin-top: 0.5rem;
 }
-main section .tarjeta-producto:hover {
+main#tienda section .tarjeta-producto:hover {
   transform: translate(0, -20px);
-  cursor: pointer;
 }
-main section .tarjeta-producto button {
+main#tienda section .tarjeta-producto img {
+  transition: all 0.3s ease-in-out;
+}
+main#tienda section .tarjeta-producto img:hover {
+  cursor: pointer;
+  opacity: 0.7;
+}
+main#tienda section .tarjeta-producto button {
   background-color: #ee6130;
   border: none;
   border-radius: 5px;
@@ -118,10 +124,10 @@ main section .tarjeta-producto button {
   cursor: pointer;
   transition: all 0.3s ease;
 }
-main section .tarjeta-producto button:hover {
+main#tienda section .tarjeta-producto button:hover {
   background-color: black;
 }
-main section .tarjeta-producto img {
+main#tienda section .tarjeta-producto img {
   padding: 10px;
   width: 300px;
   height: 300px;
@@ -132,7 +138,6 @@ main section .tarjeta-producto img {
   display: flex;
   justify-content: center;
   flex-direction: row;
-  margin-top: 20px;
 }
 .pro-details .single-pro-details {
   display: flex;
@@ -153,12 +158,13 @@ main section .tarjeta-producto img {
 }
 .pro-details .single-pro-details p {
   max-width: 500px;
+  text-align: center;
 }
 
 .single-pro-image {
   margin-top: 30px;
   width: 40%;
-  height: 80vh;
+  height: 75vh;
   border-radius: 10px;
   padding: 20px;
   background-color: lightgrey;
@@ -171,17 +177,29 @@ main section .tarjeta-producto img {
 }
 
 /*------------------------CARRITO.HTML----------------------------------*/
+main#carrito {
+  max-width: 144rem;
+  padding: 0 2rem;
+  margin-top: 50px;
+  padding-bottom: 30px;
+}
+main#carrito section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
 #carrito-container {
   display: flex;
   flex-direction: column;
 }
 #carrito-container .carrito-producto {
-  width: 100%;
+  width: 60%;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  width: 1000px;
   gap: 20px;
   text-align: center;
 }
@@ -213,7 +231,6 @@ button:hover {
 #totales {
   display: flex;
   flex-direction: column;
-  margin-top: 50px;
   gap: 2px;
 }
 #totales #carrito-botones {
@@ -236,21 +253,6 @@ button:hover {
 
 body {
   height: 100vh;
-}
-
-footer {
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  background-color: #f8f9fa; /* El color de fondo que desees */
-  border-top: 1px solid #dee2e6; /* Opcional: agregar un borde superior */
-  padding: 10px; /* Espaciado interno opcional */
-}
-
-main {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
 }
 
 /*# sourceMappingURL=styles.css.map */

@@ -6,6 +6,7 @@
     <title>Simulador Interactivo</title>
     <link rel="stylesheet" href="bootstrap/bootstrap.min.css" />
     <link rel="stylesheet" href="css/styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   </head>
   <body>
     
@@ -20,7 +21,7 @@
     </header> 
     
 
-    <main class="mb-5 container-fluid">
+    <main class="mb-5 container-fluid" id="carrito">
       <section id="carrito-container">
       </section>
       <section id="totales">
@@ -28,6 +29,7 @@
         <p>Total precio: $<span id="precio">0</span></p>
         <div id="carrito-botones">
             <button id="boton-reiniciar">Reiniciar Carrito</button>
+            <button id="boton-comprar">Realizar Compra</button>
         </div>
       </section>
     </main>
