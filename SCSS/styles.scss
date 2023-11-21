@@ -120,6 +120,7 @@ main#tienda {
             margin-top: 0.5rem; // Añade un margen superior opcional para separar el título de la imagen
         }
         &:hover {
+          cursor: pointer;
           transform: translate(0, -20px);
         }
         img{
